@@ -25,7 +25,8 @@
 # 📫 4. Настройка запроса в Postman.
   1. Создать POST запрос с методом photos.createComment(url: https://api.vk.com/method/photos.createComment)
   2. Настройка body поставить метод "x-www-from-urlencoded"
-  3. Key           Value
+ 
+   # Key           Value
      access_token  ТОКЕН                         
      owner_id      189704458                         
      photo_id      303057922                          
@@ -36,7 +37,7 @@
 
 # 📜🖋  5. Проверка комментария через Postman.
    1. Создать POST запрос с методом photos.getComments (url: https://api.vk.com/method/photos.getComments)
-   2. Key             Value
+   #  Key             Value
       access_token     ТОКЕН                         
       owner_id         189704458                         
       photo_id         303057922                            
