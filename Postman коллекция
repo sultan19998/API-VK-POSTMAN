@@ -1,1 +1,153 @@
-
+{
+	"info": {
+		"_postman_id": "97c87896-4b87-448b-848e-b5b2513a4844",
+		"name": "ТЗ Тагес Copy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15428818"
+	},
+	"item": [
+		{
+			"name": "коммент",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var template = `\r",
+							"<style type=\"text/css\">\r",
+							"    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}\r",
+							"    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}\r",
+							"    .tftable tr {background-color:#ffffff;}\r",
+							"    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}\r",
+							"    .tftable tr:hover {background-color:#e0ffff;}\r",
+							"</style>\r",
+							"\r",
+							"<table class=\"tftable\" border=\"1\">\r",
+							"    <tr>\r",
+							"        <th>Response</th>\r",
+							"    </tr>\r",
+							"    <tr>\r",
+							"        <td>{{response}}</td>\r",
+							"    </tr>\r",
+							"</table>\r",
+							"`;\r",
+							"\r",
+							"function constructVisualizerPayload() {\r",
+							"    var res = pm.response.json();\r",
+							"    return { response: res.response };\r",
+							"}\r",
+							"\r",
+							"pm.visualizer.set(template, constructVisualizerPayload());"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					},
+					{
+						"key": "Cookie",
+						"value": "remixff=0; remixlang=0; remixlgck=c562f082feaae7fe51; remixstid=737418541_T38LKzi7gzr5b4kXEFPeAinzazIJEVZQGXRNqag3Pew; remixstlid=9113934838306243033_onpAHz9mL8oImHuE8MXprz6s2sVx5rFxMzIo5Zt9g0D; remixua=-1%7C-1%7C53%7C1803870298; remixuas=YzMxMmUwZWVhMzdiZjY2YzZlNTdjNzJl"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "access_token",
+							"value": "Токен",
+							"type": "text"
+						},
+						{
+							"key": "owner_id",
+							"value": "189704458",
+							"type": "text"
+						},
+						{
+							"key": "photo_id",
+							"value": "303057922",
+							"type": "text"
+						},
+						{
+							"key": "message",
+							"value": "ТеСт ТЕСТ",
+							"type": "text"
+						},
+						{
+							"key": "v",
+							"value": "5.199",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://api.vk.com/method/photos.createComment",
+					"protocol": "https",
+					"host": [
+						"api",
+						"vk",
+						"com"
+					],
+					"path": [
+						"method",
+						"photos.createComment"
+					]
+				},
+				"description": "Generated from cURL: curl --location 'https://api.vk.com/method/photos.createComment?access_token=%D0%92%D0%90%D0%A8_%D0%A2%D0%9E%D0%9A%D0%95%D0%9D&owner_id=189704458&photo_id=303057922&message=%D1%82%D0%B5%D1%81%D1%82%D0%BE%D0%B2%D1%8B%D0%B9%20%D0%BA%D0%BE%D0%BC%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%80%D0%B8%D0%B9%20%D0%B8%D0%B7%20Postman!&v=5.131' \\\r\n--header 'Content-Type: application/x-www-form-urlencoded' \\\r\n--header 'Cookie: remixff=0; remixlang=0; remixlgck=c562f082feaae7fe51; remixstid=737418541_T38LKzi7gzr5b4kXEFPeAinzazIJEVZQGXRNqag3Pew; remixstlid=9113934838306243033_onpAHz9mL8oImHuE8MXprz6s2sVx5rFxMzIo5Zt9g0D; remixua=-1%7C-1%7C53%7C1803870298; remixuas=YzMxMmUwZWVhMzdiZjY2YzZlNTdjNzJl' \\\r\n--data-urlencode 'access_token=ВАШ_ТОКЕН' \\\r\n--data-urlencode 'owner_id=189704458' \\\r\n--data-urlencode 'photo_id=303057922' \\\r\n--data-urlencode 'message=тестовый комментарий из Postman!' \\\r\n--data-urlencode 'v=5.131'"
+			},
+			"response": []
+		},
+		{
+			"name": "Проверка коммента",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "access_token",
+							"value": "Токен",
+							"type": "text"
+						},
+						{
+							"key": "owner_id",
+							"value": "189704458",
+							"type": "text"
+						},
+						{
+							"key": "photo_id",
+							"value": "303057922",
+							"type": "text"
+						},
+						{
+							"key": "v",
+							"value": "5.199",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://api.vk.com/method/photos.getComments",
+					"protocol": "https",
+					"host": [
+						"api",
+						"vk",
+						"com"
+					],
+					"path": [
+						"method",
+						"photos.getComments"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
